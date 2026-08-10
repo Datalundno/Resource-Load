@@ -10,8 +10,11 @@ Gantt answers *what happens when*. Resource Load answers *who is busy when*.
 
 | Build | Link |
 | --- | --- |
-| **Branded** — DataLund Resource Load 1.0.0.0 | [`downloads/resourceLoad.pbiviz`](downloads/resourceLoad.pbiviz) |
+| **Branded (website)** — DataLund Resource Load 1.0.0.0 | [`downloads/resourceLoad.pbiviz`](downloads/resourceLoad.pbiviz) |
+| **Unbranded (personal)** — Resource Load 1.0.0.0 | [`downloads/wl/ResourceLoad.pbiviz`](downloads/wl/ResourceLoad.pbiviz) |
 | Sample Excel | [`downloads/ResourceLoadSampleData.xlsx`](downloads/ResourceLoadSampleData.xlsx) |
+
+Whitelabel is personal-only — **not** for datalund.no. Details: [`docs/WHITELABEL.md`](docs/WHITELABEL.md).
 
 Website deploy pack: [`website-sync/APPLY.md`](website-sync/APPLY.md) · copy brief: [`docs/WEBSITE.md`](docs/WEBSITE.md).
 
@@ -63,9 +66,8 @@ Format → **General → Density** — suite presets **Compact / Comfortable / L
 ```bash
 npm install
 npm run lint
-npx pbiviz package
-cp dist/*.pbiviz downloads/resourceLoad.pbiviz
-cp downloads/resourceLoad.pbiviz website-sync/public/downloads/resourceLoad.pbiviz
+npm run package:branded      # downloads/resourceLoad.pbiviz + website-sync
+npm run package:whitelabel  # downloads/wl/ResourceLoad.pbiviz
 ```
 
 Requires Node.js ≥ 20.19 and `powerbi-visuals-tools` 7.2.x.
@@ -76,6 +78,7 @@ Requires Node.js ≥ 20.19 and `powerbi-visuals-tools` 7.2.x.
 | --- | --- |
 | [`RESOURCE_LOAD.md`](RESOURCE_LOAD.md) | Full agent kickoff / behaviour |
 | [`docs/WEBSITE.md`](docs/WEBSITE.md) | Website / promo copy for Website repo agent |
+| [`docs/WHITELABEL.md`](docs/WHITELABEL.md) | Unbranded personal package |
 | [`docs/PRIVACY.md`](docs/PRIVACY.md) | Privacy (sandbox-only) |
 | [`docs/SUPPORT.md`](docs/SUPPORT.md) | Support |
 | [`docs/APPSOURCE.md`](docs/APPSOURCE.md) | AppSource checklist |

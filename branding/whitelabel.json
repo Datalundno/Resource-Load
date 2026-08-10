@@ -1,0 +1,36 @@
+{
+  "id": "whitelabel",
+  "outputFile": "downloads/wl/ResourceLoad.pbiviz",
+  "syncWebsite": false,
+  "packageJson": {
+    "name": "resource-load",
+    "description": "Resource Load — custom visual for Microsoft Power BI",
+    "homepage": ""
+  },
+  "pbiviz": {
+    "visual": {
+      "name": "resourceLoad",
+      "displayName": "Resource Load",
+      "guid": "resourceLoadWL848D396D0B695DE6F58CE0081268A861",
+      "visualClassName": "Visual",
+      "version": "1.0.0.0",
+      "description": "Resource load chart for Power BI — people on tasks over time with swimlanes for overlapping assignments, load badges, density presets, optional time window, cross-filtering, and tooltips.",
+      "supportUrl": "https://example.com",
+      "gitHubUrl": ""
+    },
+    "author": {
+      "name": "Resource Load",
+      "email": "noreply@example.com"
+    }
+  },
+  "strings": {
+    "Visual_Name": "Resource Load",
+    "Visual_Description": "See who is busy when — people on tasks over time with swimlanes and load badges.",
+    "Landing_Title": "Resource Load",
+    "Landing_Subtitle": "See who is busy when — people on tasks over time."
+  },
+  "codeFallbacks": {
+    "Landing_Title": "Resource Load",
+    "Landing_Subtitle": "See who is busy when — people on tasks over time."
+  }
+}

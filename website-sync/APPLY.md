@@ -14,6 +14,16 @@ Full copy brief: [`../docs/WEBSITE.md`](../docs/WEBSITE.md).
 
 Also update home / nav so Resource Load is discoverable next to Gantt (see `docs/WEBSITE.md` §4). Ready-made copy blocks are in that brief — do not invent a second product name.
 
+## Branded vs unbranded
+
+| | **Branded — website** | **Unbranded — personal only** |
+| --- | --- | --- |
+| Name | DataLund Resource Load | Resource Load |
+| File | `resourceLoad.pbiviz` | `ResourceLoad.pbiviz` |
+| Link on site | `/downloads/resourceLoad.pbiviz` | **Do not add** |
+
+Whitelabel package lives at `downloads/wl/` in the Resource-Load repo only.
+
 ## Copy from `website-sync/` (Resource-Load `main`)
 
 ```bash

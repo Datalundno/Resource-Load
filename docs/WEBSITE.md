@@ -26,6 +26,8 @@ DataLund Resource Load puts people on a timeline, stacks overlapping assignments
 
 **Avoid:** capacity calendars, FTE %, editing assignments, “AI”, purple-gradient marketing fluff.
 
+**Whitelabel:** There is a separate unbranded **Resource Load** `.pbiviz` for personal use (`downloads/wl/ResourceLoad.pbiviz`). **Do not** put it on the website or link it from datalund.no. See [`WHITELABEL.md`](./WHITELABEL.md).
+
 ---
 
 ## 2) URLs to create / wire
