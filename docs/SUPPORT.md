@@ -19,6 +19,7 @@
 
 - AppSource checklist: [`APPSOURCE.md`](./APPSOURCE.md)
 - Website / promo brief: [`WEBSITE.md`](./WEBSITE.md)
+- Whitelabel (personal): [`WHITELABEL.md`](./WHITELABEL.md)
 - Sample Excel: `../downloads/ResourceLoadSampleData.xlsx`
 - Agent kickoff: [`../RESOURCE_LOAD.md`](../RESOURCE_LOAD.md)
 - Website sync: [`../website-sync/APPLY.md`](../website-sync/APPLY.md)
