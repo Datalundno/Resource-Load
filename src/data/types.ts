@@ -51,7 +51,8 @@ export interface ResourceRow {
 export type AxisGranularity = "day" | "week" | "month" | "quarter";
 export type AxisGranularityOption = "auto" | AxisGranularity;
 export type AxisLabelFormat = "date" | "week" | "both";
-export type ColorMode = "single" | "task" | "concurrency";
+/** Format → General → Color by (`colorBy`). Values: single · task · concurrency. */
+export type ColorBy = "single" | "task" | "concurrency";
 
 export interface ViewModel {
     tasks: TaskRow[];

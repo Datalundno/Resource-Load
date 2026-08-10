@@ -210,10 +210,10 @@
                         ]
                     }
                 },
-                "colorMode": {
-                    "displayName": "Bar colors",
-                    "displayNameKey": "Prop_ColorMode",
-                    "description": "Single fill, color by task name, or warn when overlapping.",
+                "colorBy": {
+                    "displayName": "Color by",
+                    "displayNameKey": "Prop_ColorBy",
+                    "description": "Single fill, by task name, or warn when overlapping.",
                     "type": {
                         "enumeration": [
                             {

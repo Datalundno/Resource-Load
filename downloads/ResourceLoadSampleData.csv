@@ -1,11 +1,13 @@
-Resource,Task,Start Date,End Date,Progress,Group,RAG
-Ada Ng,Website redesign,2026-07-01,2026-08-15,0.65,Delivery,Green
-Ada Ng,Brand guidelines,2026-08-01,2026-08-30,0.2,Design,Amber
-Bjørn Holm,Data platform,2026-07-10,2026-09-01,0.4,Platform,Green
-Bjørn Holm,API hardening,2026-08-10,2026-08-25,0.1,Platform,Amber
-Bjørn Holm,On-call week,2026-08-18,2026-08-24,0.0,Ops,Red
-Cara Moss,Customer onboard,2026-07-20,2026-08-10,0.9,CS,Green
-Cara Moss,Q3 planning,2026-08-20,2026-09-05,0.0,PMO,Green
-Diego Ruiz,Mobile app v2,2026-07-05,2026-09-15,0.55,Product,Green
-Elena Park,Security audit,2026-08-01,2026-08-20,0.3,Security,Amber
-Elena Park,Vendor RFP,2026-08-12,2026-09-01,0.15,Procurement,Green
+Task,Start Date,End Date,Progress,Group,Resource,Project
+Requirements,2026-06-11,2026-06-25,100,Delivery,Ada Ng,North Sea Hub
+API design,2026-07-01,2026-07-20,75,Delivery,Sam Ortiz,North Sea Hub
+FAT prep,2026-08-20,2026-09-05,20,Delivery,Ada Ng,North Sea Hub
+Cable pull,2026-07-01,2026-08-20,40,Delivery,Bo Berg,Arctic Link
+Weather hold,2026-08-10,2026-08-18,0,Delivery,Riley Chen,Arctic Link
+On-call week,2026-08-18,2026-08-24,0,Delivery,Bo Berg,Arctic Link
+Scope workshop,2026-07-11,2026-07-25,50,Initiation,Cara Diaz,Yard Retrofit
+Scope freeze,2026-08-12,2026-08-12,0,Initiation,Cara Diaz,Yard Retrofit
+Integration,2026-07-01,2026-08-10,85,Build,Sam Ortiz,Digital Twin v2
+UAT,2026-08-11,2026-08-25,30,Build,Ada Ng,Digital Twin v2
+Permit draft,2026-08-15,2026-10-01,10,Plan,Finn Olsen,Port Expansion
+Stakeholder map,2026-08-20,2026-09-15,5,Plan,Jordan Lee,Port Expansion

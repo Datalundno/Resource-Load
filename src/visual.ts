@@ -23,7 +23,7 @@ import {
     AxisGranularity,
     AxisGranularityOption,
     AxisLabelFormat,
-    ColorMode,
+    ColorBy,
     ResourceRow,
     TaskRow,
     ViewModel
@@ -39,6 +39,7 @@ import {
 import { getContrastColors } from "./utils/contrast";
 import { addMonths, chooseGranularity, startOfDay } from "./utils/dates";
 import { buildTooltipDataItems, pointerCoordinates } from "./utils/tooltips";
+import { resolveColorByFromDataView } from "./suite/colorBy";
 import { parseDensityPreset, resolveDensitySizes } from "./suite/density";
 
 type TimeWindowMonths = 3 | 6 | 9 | 12 | null;
@@ -77,6 +78,7 @@ export class Visual implements IVisual {
     private axisLayer: d3.Selection<SVGGElement, unknown, null, undefined>;
 
     private viewModel: ViewModel | null = null;
+    private dataView: powerbi.DataView | undefined;
     private selectedKeys: Set<string> = new Set();
     private syncingScroll = false;
     private lastViewport: { width: number; height: number } | null = null;
@@ -255,10 +257,12 @@ export class Visual implements IVisual {
 
         try {
             const dataView = options.dataViews && options.dataViews[0];
+            this.dataView = dataView;
             this.formattingSettings = this.formattingSettingsService.populateFormattingSettingsModel(
                 VisualFormattingSettingsModel,
                 dataView
             );
+            this.migrateLegacyColorBy(dataView);
 
             const hasBoundFields = (dataView?.metadata?.columns?.length ?? 0) > 0;
             if (!hasBoundFields) {
@@ -334,8 +338,8 @@ export class Visual implements IVisual {
         const stepKeys: Array<[string, string]> = [
             ["Landing_Step1", "1. Drag a person/team into Resource"],
             ["Landing_Step2", "2. Drag Task / project into Task"],
-            ["Landing_Step3", "3. Add Start Date, plus End Date or Duration"],
-            ["Landing_Step4", "Optional: Progress, Group, Tooltips"]
+            ["Landing_Step3", "3. Add Start Date and End Date"],
+            ["Landing_Step4", "Optional: Progress, Group. Also supported later: Duration, Tooltips"]
         ];
         for (const [key, fallback] of stepKeys) {
             steps.append("li").text(this.t(key, fallback));
@@ -417,12 +421,23 @@ export class Visual implements IVisual {
         return "date";
     }
 
-    private resolveColorMode(): ColorMode {
-        const raw = this.formattingSettings?.generalCard?.colorMode?.value?.value as ColorMode | undefined;
-        if (raw === "task" || raw === "concurrency" || raw === "single") {
-            return raw;
+    /**
+     * Apply legacy `general.colorMode` into the Format model so Color by and render stay in sync.
+     */
+    private migrateLegacyColorBy(dataView: powerbi.DataView | undefined): void {
+        const card = this.formattingSettings?.generalCard?.colorBy;
+        if (!card) {
+            return;
         }
-        return "single";
+        const resolved = resolveColorByFromDataView(dataView, card.value?.value);
+        card.setValue(resolved);
+    }
+
+    private resolveColorBy(): ColorBy {
+        return resolveColorByFromDataView(
+            this.dataView,
+            this.formattingSettings?.generalCard?.colorBy?.value?.value
+        );
     }
 
     private resolveDomain(): { start: Date; end: Date; granularity: AxisGranularity } {
@@ -599,7 +614,7 @@ export class Visual implements IVisual {
         const loadWarnFill = contrast.isHighContrast
             ? contrast.foreground
             : (this.formattingSettings?.barsCard?.loadWarnFill?.value?.value || "#ea580c");
-        const colorMode = this.resolveColorMode();
+        const colorBy = this.resolveColorBy();
         const todayColor = contrast.isHighContrast
             ? contrast.foreground
             : (this.formattingSettings?.generalCard?.todayLineColor?.value?.value || "#e81123");
@@ -623,10 +638,10 @@ export class Visual implements IVisual {
             if (contrast.isHighContrast) {
                 return contrast.foreground;
             }
-            if (colorMode === "task") {
+            if (colorBy === "task") {
                 return this.host.colorPalette.getColor(task.task).value;
             }
-            if (colorMode === "concurrency") {
+            if (colorBy === "concurrency") {
                 return task.concurrency > 1 ? loadWarnFill : defaultBarFill;
             }
             return defaultBarFill;
@@ -636,10 +651,10 @@ export class Visual implements IVisual {
             if (contrast.isHighContrast) {
                 return contrast.foregroundSelected;
             }
-            if (colorMode === "task") {
+            if (colorBy === "task") {
                 return this.host.colorPalette.getColor(task.task).value;
             }
-            if (colorMode === "concurrency") {
+            if (colorBy === "concurrency") {
                 return task.concurrency > 1 ? loadWarnFill : defaultProgressFill;
             }
             return defaultProgressFill;
