@@ -21,8 +21,10 @@ Website deploy pack: [`website-sync/APPLY.md`](website-sync/APPLY.md) · copy br
 ## Install (Power BI Desktop)
 
 1. Download [`downloads/resourceLoad.pbiviz`](downloads/resourceLoad.pbiviz).
-2. **Get more visuals → Import a visual from a file**.
+2. **Get more visuals → Import a visual from a file** (re-import after updating the file).
 3. Bind sample data from [`downloads/ResourceLoadSampleData.xlsx`](downloads/ResourceLoadSampleData.xlsx).
+
+Field wells accept fields one at a time. Required roles are validated in the visual (landing page / message), not locked by capability `min` rules.
 
 ## Field binding
 
