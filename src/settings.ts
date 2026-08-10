@@ -28,7 +28,7 @@ const densityItems: powerbi.IEnumMember[] = [
     { value: "custom", displayName: "Custom" }
 ];
 
-const colorModeItems: powerbi.IEnumMember[] = [
+const colorByItems: powerbi.IEnumMember[] = [
     { value: "single", displayName: "Single fill" },
     { value: "task", displayName: "By task" },
     { value: "concurrency", displayName: "By concurrency" }
@@ -127,13 +127,13 @@ class GeneralCardSettings extends FormattingSettingsCard {
         value: densityItems[1]
     });
 
-    colorMode = new formattingSettings.ItemDropdown({
-        name: "colorMode",
-        displayName: "Bar colors",
-        displayNameKey: "Prop_ColorMode",
-        description: "Single fill, color by task name, or warn when overlapping.",
-        items: colorModeItems,
-        value: colorModeItems[0]
+    colorBy = new formattingSettings.ItemDropdown({
+        name: "colorBy",
+        displayName: "Color by",
+        displayNameKey: "Prop_ColorBy",
+        description: "Single fill, by task name, or warn when overlapping.",
+        items: colorByItems,
+        value: colorByItems[0]
     });
 
     showTodayLine = new formattingSettings.ToggleSwitch({
@@ -186,7 +186,7 @@ class GeneralCardSettings extends FormattingSettingsCard {
     displayNameKey: string = "Objects_General";
     slices: Array<FormattingSettingsSlice> = [
         this.density,
-        this.colorMode,
+        this.colorBy,
         this.showTodayLine,
         this.todayLineColor,
         this.axisGranularity,

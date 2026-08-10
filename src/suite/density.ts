@@ -2,7 +2,7 @@
 
 /**
  * Suite-wide density presets.
- * Keep in sync with GANTT SUITE.md / RESOURCE_LOAD.md — same names/numbers.
+ * Keep in sync with Website ECOSYSTEM.md §3 / Gantt — same names/numbers.
  */
 
 export type DensityPreset = "compact" | "comfortable" | "large" | "custom";

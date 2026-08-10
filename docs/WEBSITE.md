@@ -72,8 +72,14 @@ Canonical product path in `pbiviz.json` / docs: `/visuals/resource-load/`.
 
 **Fields:**
 
-- **Required:** Resource, Task, Start Date, plus End Date or Duration
-- **Optional:** Progress, Group, Tooltips
+- **Core:** Resource, Task, Start Date, End Date
+- **Optional:** Progress, Group
+- **Also supported later:** Duration (if End Date is absent), Tooltips
+
+**Format (General):**
+
+- Density: Compact / Comfortable / Large / Custom
+- Color by: Single fill · By task · By concurrency
 
 **CTAs:**
 

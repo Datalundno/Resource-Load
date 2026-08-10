@@ -47,11 +47,11 @@ Keep role `name` values identical to the suite so reports can reuse the same col
 | Resource | `resource` | Grouping | **Required.** Person / team (Y-axis rows). |
 | Task | `task` | Grouping | **Required.** Assignment / project name. |
 | Start Date | `startDate` | GroupingOrMeasure | **Required.** |
-| End Date | `endDate` | GroupingOrMeasure | Optional if Duration supplied. |
-| Duration | `duration` | Measure | Days; used when End Date absent. |
+| End Date | `endDate` | GroupingOrMeasure | **Prefer.** Required for bars when Duration is absent. |
+| Duration | `duration` | Measure | Days; optional later when End Date absent. |
 | Progress | `progress` | Measure | Optional; 0–1 or 0–100. |
 | Group | `group` | Grouping | Optional; phase / arena for tooltip or secondary label. |
-| Tooltips | `tooltipFields` | Grouping | Optional; up to ~8 extra fields. |
+| Tooltips | `tooltipFields` | Grouping | Optional later; up to ~8 extra fields. |
 
 **Do not rename** these role names. Display names in the field well can be friendlier (“Project lead”, “Project”) but `capabilities.json` `name` must stay as above.
 
@@ -79,9 +79,10 @@ For each **resource** row:
 4. Surface load:
    - **v1 (required):** stack or lane overlapping bars within the row, **or** thicken/color by concurrent count — pick one clear approach and document it in the README.
    - **Recommended v1:** small vertical lanes inside the resource row for concurrent tasks (swimlane-per-resource), plus a numeric **load badge** (max concurrent in visible window) on the label.
-5. Color:
-   - Default: single suite fill (format pane).
-   - Optional toggle: color by task (category colors from host) **or** color by concurrency (e.g. 1 = calm, 2+ = warn). Prefer one default; keep the other as a format option if time allows.
+5. Color (Format → General → **Color by** / property `colorBy`):
+   - Default: single suite fill.
+   - By task (category colors from host) **or** by concurrency (1 = calm, 2+ = warn).
+   - Migrate legacy `colorMode` persisted values so reports do not reset.
 
 ### Interaction
 
@@ -180,15 +181,21 @@ Enforce required fields in the **converter** (Resource + Task + Start, and End o
 
 Format objects (v1):
 
-- **General:** density, showTodayLine, todayLineColor, axisGranularity, weekendShading, optional showTimeWindow  
+- **General:** density, **colorBy** (Color by: single · task · concurrency), showTodayLine, todayLineColor, axisGranularity, weekendShading, optional showTimeWindow  
 - **Bars:** barHeight, cornerRadius, fill, progressFill (and/or load/warn color)  
 - **Labels:** fontSize, fontFamily, width  
+
+Legacy: older packages stored this as `general.colorMode` — map into `colorBy` on load.
 
 ---
 
 ## 6) Sample data & Lists mapping
 
-Ship a small Excel sample (like Gantt’s `GanttSampleData.xlsx`) with columns the visual binds to.
+Ship a small Excel sample with the suite **Tasks** columns (PM-maintained set from Website `ECOSYSTEM.md`):
+
+`Task · Start Date · End Date · Progress · Group · Resource · Project`
+
+Do **not** put Duration, Tooltips, or RAG on the default Tasks starter unless the shared starter is intentionally extended.
 
 Typical Microsoft Lists → roles:
 

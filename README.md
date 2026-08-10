@@ -35,11 +35,13 @@ Role `name` values match the DataLund suite (same columns as Gantt where shared)
 | Resource (person / team) | `resource` | Yes |
 | Task (assignment / project) | `task` | Yes |
 | Start Date | `startDate` | Yes |
-| End Date | `endDate` | End **or** Duration |
-| Duration (days) | `duration` | End **or** Duration |
+| End Date | `endDate` | Yes (prefer) |
+| Duration (days) | `duration` | Optional later if End Date is absent |
 | Progress | `progress` | Optional |
 | Group | `group` | Optional |
-| Tooltips | `tooltipFields` | Optional (≤8) |
+| Tooltips | `tooltipFields` | Optional later (≤8) |
+
+Starter / sample columns match the suite **Tasks** sheet: `Task · Start Date · End Date · Progress · Group · Resource · Project`.
 
 Typical Microsoft Lists mapping: Project lead → Resource, Project name → Task, Start / Estimated end → dates.
 
@@ -49,7 +51,7 @@ Typical Microsoft Lists mapping: Project lead → Resource, Project name → Tas
 
 - **Swimlanes:** overlapping assignments on the same resource stack in small vertical lanes inside that resource’s row.
 - **Load badge:** numeric badge on the resource label = max concurrent assignments in the visible time window.
-- **Colors (format pane):** single suite fill (default), color by task, or warn fill when concurrency > 1.
+- **Color by (Format → General):** single suite fill (default), by task, or warn fill when concurrency > 1.
 
 ## Density
 
