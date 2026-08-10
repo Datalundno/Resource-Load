@@ -1,5 +1,5 @@
 # Unbranded Resource Load
 
-Personal-only build. See [`../../docs/WHITELABEL.md`](../../docs/WHITELABEL.md).
+Hosted on the website at `/downloads/wl/ResourceLoad.pbiviz` but **not linked** from public pages.
 
-Do **not** publish this file on datalund.no.
+See [`../../docs/WHITELABEL.md`](../../docs/WHITELABEL.md).

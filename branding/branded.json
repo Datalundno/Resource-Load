@@ -2,6 +2,7 @@
   "id": "branded",
   "outputFile": "downloads/resourceLoad.pbiviz",
   "syncWebsite": true,
+  "websiteSyncPath": "downloads/resourceLoad.pbiviz",
   "packageJson": {
     "name": "datalund-resource-load",
     "description": "DataLund Resource Load — custom visual for Microsoft Power BI",
