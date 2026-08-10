@@ -119,13 +119,9 @@ function copyOutput(config) {
     console.log(`Wrote ${config.outputFile}`);
 
     if (config.syncWebsite) {
-        const websiteDest = path.join(
-            root,
-            "website-sync",
-            "public",
-            "downloads",
-            path.basename(config.outputFile)
-        );
+        const relative = config.websiteSyncPath
+            || path.join("downloads", path.basename(config.outputFile));
+        const websiteDest = path.join(root, "website-sync", "public", relative);
         fs.mkdirSync(path.dirname(websiteDest), { recursive: true });
         fs.copyFileSync(path.join(distDir, built), websiteDest);
         console.log(`Synced ${path.relative(root, websiteDest)}`);

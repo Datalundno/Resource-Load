@@ -26,7 +26,7 @@ DataLund Resource Load puts people on a timeline, stacks overlapping assignments
 
 **Avoid:** capacity calendars, FTE %, editing assignments, “AI”, purple-gradient marketing fluff.
 
-**Whitelabel:** There is a separate unbranded **Resource Load** `.pbiviz` for personal use (`downloads/wl/ResourceLoad.pbiviz`). **Do not** put it on the website or link it from datalund.no. See [`WHITELABEL.md`](./WHITELABEL.md).
+**Whitelabel:** Host unbranded **Resource Load** at `/downloads/wl/ResourceLoad.pbiviz` (same hidden folder as Gantt / Task List). **Do not** link it from nav, product page, home, or schema.org. See [`WHITELABEL.md`](./WHITELABEL.md).
 
 ---
 
@@ -35,8 +35,9 @@ DataLund Resource Load puts people on a timeline, stacks overlapping assignments
 | URL | Purpose |
 | --- | --- |
 | `https://datalund.no/visuals/resource-load/` | Product / AppSource Help page |
-| `https://datalund.no/downloads/resourceLoad.pbiviz` | Branded `.pbiviz` download |
+| `https://datalund.no/downloads/resourceLoad.pbiviz` | Branded `.pbiviz` download (public) |
 | `https://datalund.no/downloads/ResourceLoadSampleData.xlsx` | Sample Excel |
+| `https://datalund.no/downloads/wl/ResourceLoad.pbiviz` | Whitelabel `.pbiviz` (**hosted, unlisted**) |
 | Support / Privacy | Existing `/support/`, `/privacy/` (already cover sandbox visuals) |
 
 Canonical product path in `pbiviz.json` / docs: `/visuals/resource-load/`.
@@ -148,7 +149,7 @@ Until a real screenshot exists, reuse site chrome and the Gantt page layout; do 
 - [ ] Home or visuals section promotes Resource Load beside Gantt
 - [ ] Header/nav discoverable
 - [ ] Support + Privacy links present
-- [ ] No white-label / unbranded mention on the public site
+- [ ] Whitelabel file present at `/downloads/wl/ResourceLoad.pbiviz` with **no** public links or copy mentioning it
 
 ---
 

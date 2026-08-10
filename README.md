@@ -11,10 +11,10 @@ Gantt answers *what happens when*. Resource Load answers *who is busy when*.
 | Build | Link |
 | --- | --- |
 | **Branded (website)** — DataLund Resource Load 1.0.0.0 | [`downloads/resourceLoad.pbiviz`](downloads/resourceLoad.pbiviz) |
-| **Unbranded (personal)** — Resource Load 1.0.0.0 | [`downloads/wl/ResourceLoad.pbiviz`](downloads/wl/ResourceLoad.pbiviz) |
+| **Unbranded (hidden host)** — Resource Load 1.0.0.0 | [`downloads/wl/ResourceLoad.pbiviz`](downloads/wl/ResourceLoad.pbiviz) → site `/downloads/wl/` (unlisted) |
 | Sample Excel | [`downloads/ResourceLoadSampleData.xlsx`](downloads/ResourceLoadSampleData.xlsx) |
 
-Whitelabel is personal-only — **not** for datalund.no. Details: [`docs/WHITELABEL.md`](docs/WHITELABEL.md).
+Whitelabel is hosted on datalund.no under `/downloads/wl/` but not linked from public pages. Details: [`docs/WHITELABEL.md`](docs/WHITELABEL.md).
 
 Website deploy pack: [`website-sync/APPLY.md`](website-sync/APPLY.md) · copy brief: [`docs/WEBSITE.md`](docs/WEBSITE.md).
 
@@ -69,8 +69,9 @@ Format → **General → Density** — suite presets **Compact / Comfortable / L
 npm install
 npm run lint
 npm run package:branded      # downloads/resourceLoad.pbiviz + website-sync
-npm run package:whitelabel  # downloads/wl/ResourceLoad.pbiviz
+npm run package:whitelabel  # downloads/wl/ + website-sync/public/downloads/wl/
 ```
+
 
 Requires Node.js ≥ 20.19 and `powerbi-visuals-tools` 7.2.x.
 
