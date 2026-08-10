@@ -1,0 +1,225 @@
+.rl-root {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    font-family: "Segoe UI", wf_segoe-ui_normal, helvetica, arial, sans-serif;
+}
+
+.rl-message {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #605e5c;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.rl-landing {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background:
+        radial-gradient(120% 80% at 10% 0%, rgba(14, 165, 233, 0.12), transparent 55%),
+        radial-gradient(90% 70% at 100% 100%, rgba(2, 132, 199, 0.10), transparent 50%),
+        #f8fafc;
+}
+
+.rl-landing-card {
+    max-width: 420px;
+    width: 100%;
+    text-align: left;
+}
+
+.rl-landing-mark {
+    width: 44px;
+    height: 28px;
+    margin-bottom: 14px;
+    border-radius: 6px;
+    background:
+        linear-gradient(90deg, transparent 0 6px, rgba(14, 165, 233, 0.95) 6px 26px, transparent 26px) 0 4px / 100% 5px no-repeat,
+        linear-gradient(90deg, transparent 0 16px, rgba(234, 88, 12, 0.9) 16px 38px, transparent 38px) 0 12px / 100% 5px no-repeat,
+        linear-gradient(90deg, transparent 0 10px, rgba(14, 165, 233, 0.85) 10px 32px, transparent 32px) 0 20px / 100% 5px no-repeat,
+        #0f172a;
+}
+
+.rl-landing-title {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #0f172a;
+}
+
+.rl-landing-subtitle {
+    margin: 0 0 16px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #475569;
+}
+
+.rl-landing-steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.rl-landing-steps li {
+    margin: 0 0 8px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    color: #334155;
+    font-size: 12.5px;
+    line-height: 1.4;
+}
+
+.rl-chart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.rl-toolbar {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+    min-height: 40px;
+    padding: 4px 8px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+    background: #f8fafc;
+}
+
+.rl-toolbar-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.rl-tool-btn {
+    appearance: none;
+    border: 0;
+    margin: 0;
+    padding: 5px 9px;
+    border-radius: 4px;
+    background: transparent;
+    color: #0369a1;
+    font: inherit;
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.rl-tool-btn:hover {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+.rl-tool-btn.is-active {
+    background: #0f172a;
+    color: #f8fafc;
+}
+
+.rl-body-row {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    min-height: 0;
+    min-width: 0;
+}
+
+.rl-labels-col {
+    flex: 0 0 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+.rl-labels-col::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.rl-plot-col {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: auto;
+}
+
+.rl-axis-row {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    min-width: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    background: rgba(250, 250, 250, 0.9);
+}
+
+.rl-axis-gutter {
+    flex: 0 0 auto;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+}
+
+.rl-axis-col {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.rl-labels-svg,
+.rl-plot-svg,
+.rl-axis-svg {
+    display: block;
+}
+
+.rl-labels-svg .label-text,
+.rl-labels-svg .load-badge-text {
+    pointer-events: none;
+    user-select: none;
+}
+
+.rl-plot-svg .weekend-band,
+.rl-plot-svg .row-band {
+    shape-rendering: crispEdges;
+}
+
+.rl-plot-svg .task-track,
+.rl-plot-svg .task-progress {
+    shape-rendering: geometricPrecision;
+}
+
+.rl-plot-svg .task-track {
+    vector-effect: non-scaling-stroke;
+}
+
+.rl-plot-svg .today-line {
+    shape-rendering: crispEdges;
+}
+
+.rl-axis-svg .x-axis path,
+.rl-axis-svg .x-axis line {
+    fill: none;
+    shape-rendering: crispEdges;
+}
+
+.rl-axis-svg .x-axis text {
+    font-size: 11px;
+}
