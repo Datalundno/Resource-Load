@@ -1,0 +1,368 @@
+{
+    "dataRoles": [
+        {
+            "displayName": "Resource",
+            "displayNameKey": "Role_Resource",
+            "name": "resource",
+            "kind": "Grouping",
+            "description": "Person or team (required). One row per resource.",
+            "descriptionKey": "Role_Resource_Desc",
+            "preferredTypes": [
+                {
+                    "text": true
+                }
+            ]
+        },
+        {
+            "displayName": "Task",
+            "displayNameKey": "Role_Task",
+            "name": "task",
+            "kind": "Grouping",
+            "description": "Assignment / project name (required).",
+            "descriptionKey": "Role_Task_Desc",
+            "preferredTypes": [
+                {
+                    "text": true
+                }
+            ]
+        },
+        {
+            "displayName": "Start Date",
+            "displayNameKey": "Role_StartDate",
+            "name": "startDate",
+            "kind": "GroupingOrMeasure",
+            "description": "Assignment start date (required).",
+            "descriptionKey": "Role_StartDate_Desc"
+        },
+        {
+            "displayName": "End Date",
+            "displayNameKey": "Role_EndDate",
+            "name": "endDate",
+            "kind": "GroupingOrMeasure",
+            "description": "Assignment end date. Optional when Duration is supplied.",
+            "descriptionKey": "Role_EndDate_Desc"
+        },
+        {
+            "displayName": "Duration",
+            "displayNameKey": "Role_Duration",
+            "name": "duration",
+            "kind": "Measure",
+            "description": "Duration in days. Used when End Date is absent.",
+            "descriptionKey": "Role_Duration_Desc",
+            "requiredTypes": [
+                {
+                    "numeric": true
+                },
+                {
+                    "integer": true
+                }
+            ]
+        },
+        {
+            "displayName": "Progress",
+            "displayNameKey": "Role_Progress",
+            "name": "progress",
+            "kind": "Measure",
+            "description": "Progress as 0–1 or 0–100.",
+            "descriptionKey": "Role_Progress_Desc",
+            "requiredTypes": [
+                {
+                    "numeric": true
+                },
+                {
+                    "integer": true
+                }
+            ]
+        },
+        {
+            "displayName": "Group",
+            "displayNameKey": "Role_Group",
+            "name": "group",
+            "kind": "Grouping",
+            "description": "Phase / arena for tooltip or secondary label.",
+            "descriptionKey": "Role_Group_Desc",
+            "preferredTypes": [
+                {
+                    "text": true
+                }
+            ]
+        },
+        {
+            "displayName": "Tooltips",
+            "displayNameKey": "Role_Tooltips",
+            "name": "tooltipFields",
+            "kind": "Grouping",
+            "description": "Extra fields shown in tooltips.",
+            "descriptionKey": "Role_Tooltips_Desc"
+        }
+    ],
+    "objects": {
+        "bars": {
+            "displayName": "Bars",
+            "displayNameKey": "Objects_Bars",
+            "properties": {
+                "barHeight": {
+                    "displayName": "Bar height",
+                    "displayNameKey": "Prop_BarHeight",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "cornerRadius": {
+                    "displayName": "Corner radius",
+                    "displayNameKey": "Prop_CornerRadius",
+                    "type": {
+                        "numeric": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Bar fill",
+                    "displayNameKey": "Prop_BarFill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "progressFill": {
+                    "displayName": "Progress fill",
+                    "displayNameKey": "Prop_ProgressFill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "loadWarnFill": {
+                    "displayName": "Overlap warn fill",
+                    "displayNameKey": "Prop_LoadWarnFill",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "labels": {
+            "displayName": "Resource labels",
+            "displayNameKey": "Objects_Labels",
+            "properties": {
+                "fontSize": {
+                    "displayName": "Font size",
+                    "displayNameKey": "Prop_FontSize",
+                    "type": {
+                        "formatting": {
+                            "fontSize": true
+                        }
+                    }
+                },
+                "fontFamily": {
+                    "displayName": "Font family",
+                    "displayNameKey": "Prop_FontFamily",
+                    "type": {
+                        "formatting": {
+                            "fontFamily": true
+                        }
+                    }
+                },
+                "width": {
+                    "displayName": "Label pane width",
+                    "displayNameKey": "Prop_LabelWidth",
+                    "type": {
+                        "numeric": true
+                    }
+                }
+            }
+        },
+        "general": {
+            "displayName": "General",
+            "displayNameKey": "Objects_General",
+            "properties": {
+                "density": {
+                    "displayName": "Density",
+                    "displayNameKey": "Prop_Density",
+                    "description": "Suite size preset. Custom uses Bars and Resource labels values.",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "displayName": "Compact",
+                                "value": "compact"
+                            },
+                            {
+                                "displayName": "Comfortable",
+                                "value": "comfortable"
+                            },
+                            {
+                                "displayName": "Large",
+                                "value": "large"
+                            },
+                            {
+                                "displayName": "Custom",
+                                "value": "custom"
+                            }
+                        ]
+                    }
+                },
+                "colorMode": {
+                    "displayName": "Bar colors",
+                    "displayNameKey": "Prop_ColorMode",
+                    "description": "Single fill, color by task name, or warn when overlapping.",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "displayName": "Single fill",
+                                "value": "single"
+                            },
+                            {
+                                "displayName": "By task",
+                                "value": "task"
+                            },
+                            {
+                                "displayName": "By concurrency",
+                                "value": "concurrency"
+                            }
+                        ]
+                    }
+                },
+                "showTodayLine": {
+                    "displayName": "Show today line",
+                    "displayNameKey": "Prop_ShowTodayLine",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "todayLineColor": {
+                    "displayName": "Today line color",
+                    "displayNameKey": "Prop_TodayLineColor",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "axisGranularity": {
+                    "displayName": "Axis granularity",
+                    "displayNameKey": "Prop_AxisGranularity",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "displayName": "Auto",
+                                "value": "auto"
+                            },
+                            {
+                                "displayName": "Day",
+                                "value": "day"
+                            },
+                            {
+                                "displayName": "Week",
+                                "value": "week"
+                            },
+                            {
+                                "displayName": "Month",
+                                "value": "month"
+                            },
+                            {
+                                "displayName": "Quarter",
+                                "value": "quarter"
+                            }
+                        ]
+                    }
+                },
+                "axisLabelFormat": {
+                    "displayName": "Axis labels",
+                    "displayNameKey": "Prop_AxisLabels",
+                    "type": {
+                        "enumeration": [
+                            {
+                                "displayName": "Date",
+                                "value": "date"
+                            },
+                            {
+                                "displayName": "Week number",
+                                "value": "week"
+                            },
+                            {
+                                "displayName": "Week + date",
+                                "value": "both"
+                            }
+                        ]
+                    }
+                },
+                "weekendShading": {
+                    "displayName": "Weekend shading",
+                    "displayNameKey": "Prop_WeekendShading",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "showTimeWindow": {
+                    "displayName": "Show time window",
+                    "displayNameKey": "Prop_ShowTimeWindow",
+                    "description": "Toolbar: 3 / 6 / 9 / 12 months from today, or All.",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        }
+    },
+    "dataViewMappings": [
+        {
+            "conditions": [
+                {
+                    "resource": { "min": 1, "max": 1 },
+                    "task": { "min": 1, "max": 1 },
+                    "startDate": { "min": 0, "max": 1 },
+                    "endDate": { "min": 0, "max": 1 },
+                    "duration": { "min": 0, "max": 1 },
+                    "progress": { "max": 1 },
+                    "group": { "max": 1 },
+                    "tooltipFields": { "max": 8 }
+                }
+            ],
+            "table": {
+                "rows": {
+                    "select": [
+                        { "for": { "in": "resource" } },
+                        { "for": { "in": "task" } },
+                        { "for": { "in": "startDate" } },
+                        { "for": { "in": "endDate" } },
+                        { "bind": { "to": "duration" } },
+                        { "bind": { "to": "progress" } },
+                        { "for": { "in": "group" } },
+                        { "for": { "in": "tooltipFields" } }
+                    ],
+                    "dataReductionAlgorithm": {
+                        "top": {
+                            "count": 30000
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "privileges": [],
+    "supportsHighlight": true,
+    "supportsMultiVisualSelection": true,
+    "supportsLandingPage": true,
+    "supportsEmptyDataView": true,
+    "supportsKeyboardFocus": true,
+    "tooltips": {
+        "supportedTypes": {
+            "default": true,
+            "canvas": true
+        },
+        "roles": [
+            "tooltipFields"
+        ]
+    }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DataLund Resource Load — Free Power BI visual | Datalund</title>
+  <meta name="description" content="See who is busy when. Free Power BI visual for people on tasks over time — swimlanes, load badges, and the same suite density as DataLund Gantt." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0F3D36" />
+  <meta name="author" content="Datalund" />
+  <link rel="canonical" href="https://datalund.no/visuals/resource-load/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta property="og:site_name" content="Datalund" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://datalund.no/visuals/resource-load/" />
+  <meta property="og:title" content="DataLund Resource Load — Free Power BI visual" />
+  <meta property="og:description" content="People on tasks over time. Overlaps stack in swimlanes; a badge shows peak concurrent load." />
+  <meta property="og:image" content="https://datalund.no/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DataLund Resource Load — Free Power BI visual" />
+  <meta name="twitter:description" content="People on tasks over time. Overlaps stack in swimlanes; a badge shows peak concurrent load." />
+  <meta name="twitter:image" content="https://datalund.no/og-image.png" />
+  <link rel="stylesheet" href="/legal.css" />
+  <link rel="stylesheet" href="/consent.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DataLund Resource Load",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Power BI Desktop",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Free Power BI visual that shows people on tasks over time with swimlanes and load badges.",
+    "url": "https://datalund.no/visuals/resource-load/",
+    "downloadUrl": "https://datalund.no/downloads/resourceLoad.pbiviz",
+    "softwareVersion": "1.0.0.0",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Datalund",
+      "url": "https://datalund.no/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/">Datalund</a>
+    <nav>
+      <a href="/visuals/gantt/">DataLund Gantt chart</a>
+      <a href="/visuals/resource-load/">DataLund Resource Load</a>
+      <a href="/support/">Support</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
+  <article class="doc">
+    <p class="eyebrow">Power BI visual</p>
+    <h1>DataLund Resource Load</h1>
+    <p class="lede">See who is busy when. People (or teams) on tasks over a clear timeline.</p>
+
+    <div class="callout">
+      AppSource <strong>Help</strong> page.
+      Pair with <a href="/visuals/gantt/">DataLund Gantt</a> for the plan — this visual answers who is loaded.
+      For questions, use <a href="/support/">Support</a>.
+    </div>
+
+    <h2>Features</h2>
+    <ul>
+      <li>One row per person or team</li>
+      <li>Assignment bars with optional progress fill</li>
+      <li>Overlaps stack in swimlanes inside the resource row</li>
+      <li>Load badge shows peak concurrent assignments in the visible window</li>
+      <li>Density presets (Compact / Comfortable / Large / Custom) — Format → General</li>
+      <li>Optional time window from today (3 / 6 / 9 / 12 months) — Format → General</li>
+      <li>Cross-filter, tooltips, today line, and weekend shading</li>
+      <li>No network calls — runs in the Power BI sandbox</li>
+    </ul>
+
+    <h2>Fields</h2>
+    <ul>
+      <li><strong>Resource</strong>, <strong>Task</strong>, and <strong>Start Date</strong> (required)</li>
+      <li><strong>End Date</strong> and/or <strong>Duration</strong></li>
+      <li>Optional: Progress, Group, Tooltips</li>
+    </ul>
+
+    <h2>How load is shown</h2>
+    <p>
+      Overlapping assignments on the same person stack in small vertical lanes.
+      A numeric badge on the label shows the maximum concurrent count in the visible time window.
+    </p>
+
+    <p class="actions">
+      <a
+        class="btn"
+        href="/downloads/resourceLoad.pbiviz"
+        download
+        data-analytics-download="resourceLoad.pbiviz"
+      >Download .pbiviz</a>
+      <a
+        class="btn ghost"
+        href="/downloads/ResourceLoadSampleData.xlsx"
+        download
+        data-analytics-download="ResourceLoadSampleData.xlsx"
+      >Sample Excel</a>
+      <a class="btn ghost" href="/support/">Support</a>
+    </p>
+  </article>
+  <footer class="bar foot">
+    <p>
+      © 2026 Datalund ·
+      <a href="/privacy/#analytics" data-analytics-preferences>Analytics preferences</a> ·
+      Not affiliated with Microsoft. Power BI is a trademark of Microsoft.
+    </p>
+  </footer>
+  <script src="/js/consent-analytics.js" defer></script>
+</body>
+</html>
