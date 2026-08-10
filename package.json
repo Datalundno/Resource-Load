@@ -12,6 +12,8 @@
     "pbiviz": "pbiviz",
     "start": "pbiviz start",
     "package": "pbiviz package",
+    "package:branded": "node scripts/package-brand.mjs branded",
+    "package:whitelabel": "node scripts/package-brand.mjs whitelabel",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "engines": {

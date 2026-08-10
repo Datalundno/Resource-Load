@@ -97,7 +97,7 @@ For each **resource** row:
 - Editing assignments inside the visual.
 - Multi-resource assignment on one task row (if a task has multiple resources, expect **one row per resource–task** from the data model / Lists expansion).
 - Cockpit / multi-panel lab UI.
-- Whitelabel dual-brand packaging (can add later like Gantt).
+- ~~Whitelabel dual-brand packaging~~ → see [`docs/WHITELABEL.md`](docs/WHITELABEL.md) (`npm run package:whitelabel`).
 
 ---
 
