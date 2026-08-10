@@ -319,11 +319,11 @@
         {
             "conditions": [
                 {
-                    "resource": { "min": 1, "max": 1 },
-                    "task": { "min": 1, "max": 1 },
-                    "startDate": { "min": 0, "max": 1 },
-                    "endDate": { "min": 0, "max": 1 },
-                    "duration": { "min": 0, "max": 1 },
+                    "resource": { "max": 1 },
+                    "task": { "max": 1 },
+                    "startDate": { "max": 1 },
+                    "endDate": { "max": 1 },
+                    "duration": { "max": 1 },
                     "progress": { "max": 1 },
                     "group": { "max": 1 },
                     "tooltipFields": { "max": 8 }

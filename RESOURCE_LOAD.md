@@ -171,18 +171,12 @@ From [Datalundno/GANTT](https://github.com/Datalundno/GANTT) `ganttChart/`:
 
 ## 5) Capabilities sketch
 
-Minimum conditions:
+Capability conditions (field wells) — use **max only** (no `min`). Power BI blocks binding if two roles both have `min ≥ 1` in one condition.
 
-- `resource` min 1, max 1  
-- `task` min 1, max 1  
-- `startDate` max 1  
-- `endDate` max 1  
-- `duration` max 1  
-- `progress` max 1  
-- `group` max 1  
-- `tooltipFields` max 8  
+- `resource` / `task` / `startDate` / `endDate` / `duration` / `progress` / `group` → max 1  
+- `tooltipFields` → max 8  
 
-Require **Start** and (**End** or **Duration**) in the converter; show a clear landing/error if missing.
+Enforce required fields in the **converter** (Resource + Task + Start, and End or Duration); show landing/error if missing.
 
 Format objects (v1):
 
