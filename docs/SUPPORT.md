@@ -18,5 +18,7 @@
 ## Docs
 
 - AppSource checklist: [`APPSOURCE.md`](./APPSOURCE.md)
+- Website / promo brief: [`WEBSITE.md`](./WEBSITE.md)
 - Sample Excel: `../downloads/ResourceLoadSampleData.xlsx`
 - Agent kickoff: [`../RESOURCE_LOAD.md`](../RESOURCE_LOAD.md)
+- Website sync: [`../website-sync/APPLY.md`](../website-sync/APPLY.md)

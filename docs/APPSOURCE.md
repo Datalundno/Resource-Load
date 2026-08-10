@@ -29,3 +29,5 @@ pbiviz package --certification-audit
 **Title:** DataLund Resource Load  
 **Short:** See who is busy when — people on tasks over time.  
 **Long:** Pair with DataLund Gantt. Resource Load shows assignees as rows, stacks overlapping assignments in swimlanes, and badges peak concurrent load. Same density presets and field-role names as the DataLund suite.
+
+Full website / Help-page copy (meta, features, schema.org, nav): [`WEBSITE.md`](./WEBSITE.md).
