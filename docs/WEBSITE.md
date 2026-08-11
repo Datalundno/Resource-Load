@@ -2,7 +2,7 @@
 
 **Audience:** Website / marketing agent working in [Datalundno/Website](https://github.com/Datalundno/Website).  
 **Goal:** Promote Resource Load on datalund.no next to DataLund Gantt.  
-**Ship pack:** [`website-sync/APPLY.md`](../website-sync/APPLY.md) — copy files + deploy steps.
+**Ship pack:** copy from this repo’s `downloads/` into the Website repo (see § Ship steps below). Do not keep a `website-sync/` tree inside the visual repo.
 
 Do **not** invent parallel product names. Brand is **DataLund Resource Load** (publisher **Datalund** / datalund.no).
 
@@ -129,11 +129,13 @@ Use DataLund Gantt for the plan. Use Resource Load for the people.
 
 | File | Use |
 | --- | --- |
-| `website-sync/public/downloads/resourceLoad.pbiviz` | Site download |
-| `website-sync/public/downloads/ResourceLoadSampleData.xlsx` | Sample data |
-| `website-sync/public/visuals/resource-load/index.html` | Product page draft (match site CSS) |
-| `assets/store/logo-300.png` | Store / OG fallback until a dedicated shot exists |
+| `downloads/resourceLoad.pbiviz` | Branded site download |
+| `downloads/ResourceLoadSampleData.xlsx` | Sample data |
+| `assets/icon.png` | Embedded 20×20 visual icon |
+| `assets/store/logo-300.png` | Store / OG (add if missing before AppSource) |
 | Screenshots / video | Not yet — add after Desktop smoke test (1366×768) |
+
+Product page HTML lives in the **Website** repo. Copy downloads from this repo using §7 ship steps.
 
 Until a real screenshot exists, reuse site chrome and the Gantt page layout; do not fake product UI with stock photos.
 
@@ -155,17 +157,36 @@ Until a real screenshot exists, reuse site chrome and the Gantt page layout; do 
 - [ ] Home or visuals section promotes Resource Load beside Gantt
 - [ ] Header/nav discoverable
 - [ ] Support + Privacy links present
-- [ ] Whitelabel file present at `/downloads/wl/ResourceLoad.pbiviz` with **no** public links or copy mentioning it
+- [ ] (Optional) Whitelabel file at `/downloads/wl/ResourceLoad.pbiviz` with **no** public links — prefer building wl locally and copying only if policy requires a hidden host
 
 ---
 
-## 7) Source of truth
+## 7) Ship steps (Website repo)
+
+From a clean Resource-Load checkout after `npm run package:branded` (and optionally `npm run package:whitelabel`):
+
+```bash
+RL=<path-to-Resource-Load>
+mkdir -p public/downloads/wl public/visuals/resource-load
+cp "$RL/downloads/resourceLoad.pbiviz" public/downloads/resourceLoad.pbiviz
+cp "$RL/downloads/ResourceLoadSampleData.xlsx" public/downloads/ResourceLoadSampleData.xlsx
+# Optional hidden host:
+# cp "$RL/downloads/wl/ResourceLoad.pbiviz" public/downloads/wl/ResourceLoad.pbiviz
+# Product HTML lives in the Website repo — do not maintain a duplicate under Resource-Load.
+```
+
+Then update Website nav / home using the copy blocks above. Do **not** add public links to the wl file.
+
+---
+
+## 8) Source of truth
 
 | Doc | Role |
 | --- | --- |
-| This file | Marketing / website agent brief |
-| [`website-sync/APPLY.md`](../website-sync/APPLY.md) | Exact copy commands |
+| This file | Marketing / website agent brief + ship steps |
+| [`CERTIFICATION.md`](./CERTIFICATION.md) | AppSource / cert checklist |
 | [`../README.md`](../README.md) | Install + field binding |
 | [`../RESOURCE_LOAD.md`](../RESOURCE_LOAD.md) | Full product kickoff / behaviour |
+| Suite contract | https://raw.githubusercontent.com/Datalundno/Website/main/ECOSYSTEM.md |
 | GitHub | https://github.com/Datalundno/Resource-Load |
 | Sister | https://datalund.no/visuals/gantt/ |

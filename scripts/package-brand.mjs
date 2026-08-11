@@ -61,7 +61,10 @@ function applyBrand(config) {
     const pbiviz = JSON.parse(read(paths.pbiviz));
     pbiviz.visual = { ...pbiviz.visual, ...config.pbiviz.visual };
     pbiviz.author = { ...config.pbiviz.author };
-    pbiviz.version = config.pbiviz.visual.version;
+    // Keep a single version under visual.version (do not reintroduce a top-level duplicate).
+    if (Object.prototype.hasOwnProperty.call(pbiviz, "version")) {
+        delete pbiviz.version;
+    }
     write(paths.pbiviz, `${JSON.stringify(pbiviz, null, 2)}\n`);
 
     const pkg = JSON.parse(read(paths.packageJson));
@@ -119,12 +122,16 @@ function copyOutput(config) {
     console.log(`Wrote ${config.outputFile}`);
 
     if (config.syncWebsite) {
+        // Optional: copy into a sibling Website checkout when syncWebsite is enabled in branding/*.json.
+        // Default branded/whitelabel overlays leave this false so the visual repo stays cert-clean.
         const relative = config.websiteSyncPath
             || path.join("downloads", path.basename(config.outputFile));
-        const websiteDest = path.join(root, "website-sync", "public", relative);
+        const websiteRoot = config.websiteRoot
+            || path.resolve(root, "..", "Website");
+        const websiteDest = path.join(websiteRoot, "public", relative);
         fs.mkdirSync(path.dirname(websiteDest), { recursive: true });
         fs.copyFileSync(path.join(distDir, built), websiteDest);
-        console.log(`Synced ${path.relative(root, websiteDest)}`);
+        console.log(`Synced ${websiteDest}`);
     }
 }
 

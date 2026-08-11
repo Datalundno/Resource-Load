@@ -71,6 +71,9 @@ export function renderBars(
     const merged = enter.merge(join);
 
     merged
+        .attr("role", "button")
+        .attr("tabindex", "0")
+        .attr("aria-label", (d) => `${d.resource}: ${d.task}`)
         .style("cursor", "pointer")
         .style("opacity", (d) => {
             if (!hasSelection) {
@@ -145,6 +148,14 @@ export function renderBars(
             event.preventDefault();
             event.stopPropagation();
             onClick(event, d);
+        })
+        .on("keydown", (event: KeyboardEvent, d: TaskRow) => {
+            if (event.key !== "Enter" && event.key !== " ") {
+                return;
+            }
+            event.preventDefault();
+            event.stopPropagation();
+            onClick(event as unknown as MouseEvent, d);
         })
         .on("contextmenu", (event: MouseEvent, d: TaskRow) => {
             event.preventDefault();
@@ -252,6 +263,9 @@ export function renderLabelRows(
 
     merged
         .attr("transform", (d) => `translate(0,${d.y})`)
+        .attr("role", "button")
+        .attr("tabindex", "0")
+        .attr("aria-label", (d) => `Resource ${d.resource}, load ${d.visibleLoad}`)
         .style("cursor", "pointer")
         .style("opacity", (d) => {
             if (!hasSelection) {
@@ -306,9 +320,18 @@ export function renderLabelRows(
         .attr("pointer-events", "none")
         .text((d) => String(d.visibleLoad));
 
-    merged.on("click", (event: MouseEvent, d: ResourceRow) => {
-        event.preventDefault();
-        event.stopPropagation();
-        onClickResource(event, d);
-    });
+    merged
+        .on("click", (event: MouseEvent, d: ResourceRow) => {
+            event.preventDefault();
+            event.stopPropagation();
+            onClickResource(event, d);
+        })
+        .on("keydown", (event: KeyboardEvent, d: ResourceRow) => {
+            if (event.key !== "Enter" && event.key !== " ") {
+                return;
+            }
+            event.preventDefault();
+            event.stopPropagation();
+            onClickResource(event as unknown as MouseEvent, d);
+        });
 }

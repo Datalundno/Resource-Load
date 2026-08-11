@@ -4,3 +4,6 @@ dist/
 *.log
 webpack.statistics.*.html
 .DS_Store
+visual.less
+# Whitelabel package is build-on-demand (second GUID) — do not commit for certification.
+downloads/wl/*.pbiviz

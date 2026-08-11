@@ -22,7 +22,7 @@ The visual declares no network or storage privileges in `capabilities.json`.
 ## Contact
 
 - Privacy / support site: https://datalund.no/support/
-- Email: jonas.lundervold@gmail.com
+- Email: support@datalund.no
 
 ## Changes
 

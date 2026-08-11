@@ -6,7 +6,7 @@
 
 - Website: https://datalund.no/support/
 - Product / help: https://datalund.no/visuals/resource-load/
-- Email: jonas.lundervold@gmail.com
+- Email: support@datalund.no
 - GitHub Issues: https://github.com/Datalundno/Resource-Load/issues
 
 ## Before you open a ticket
@@ -22,4 +22,4 @@
 - Whitelabel (personal): [`WHITELABEL.md`](./WHITELABEL.md)
 - Sample Excel: `../downloads/ResourceLoadSampleData.xlsx`
 - Agent kickoff: [`../RESOURCE_LOAD.md`](../RESOURCE_LOAD.md)
-- Website sync: [`../website-sync/APPLY.md`](../website-sync/APPLY.md)
+- Website ship steps: [`WEBSITE.md`](./WEBSITE.md)
