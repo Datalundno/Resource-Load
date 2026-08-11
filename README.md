@@ -10,13 +10,12 @@ Gantt answers *what happens when*. Resource Load answers *who is busy when*.
 
 | Build | Link |
 | --- | --- |
-| **Branded (website)** — DataLund Resource Load 1.0.0.0 | [`downloads/resourceLoad.pbiviz`](downloads/resourceLoad.pbiviz) |
-| **Unbranded (hidden host)** — Resource Load 1.0.0.0 | [`downloads/wl/ResourceLoad.pbiviz`](downloads/wl/ResourceLoad.pbiviz) → site `/downloads/wl/` (unlisted) |
+| **Branded** — DataLund Resource Load 1.0.0.0 | [`downloads/resourceLoad.pbiviz`](downloads/resourceLoad.pbiviz) |
 | Sample Excel | [`downloads/ResourceLoadSampleData.xlsx`](downloads/ResourceLoadSampleData.xlsx) |
 
-Whitelabel is hosted on datalund.no under `/downloads/wl/` but not linked from public pages. Details: [`docs/WHITELABEL.md`](docs/WHITELABEL.md).
+Whitelabel is **build-on-demand** (different GUID, not committed). See [`docs/WHITELABEL.md`](docs/WHITELABEL.md).
 
-Website deploy pack: [`website-sync/APPLY.md`](website-sync/APPLY.md) · copy brief: [`docs/WEBSITE.md`](docs/WEBSITE.md).
+Website deploy: [`docs/WEBSITE.md`](docs/WEBSITE.md). Certification notes: [`docs/CERTIFICATION.md`](docs/CERTIFICATION.md).
 
 ## Install (Power BI Desktop)
 
@@ -61,19 +60,19 @@ Format → **General → Density** — suite presets **Compact / Comfortable / L
 
 **https://github.com/Datalundno/Website** → [datalund.no](https://datalund.no)
 
-- Product page (after website agent ships): https://datalund.no/visuals/resource-load/
-- Agent brief with ready marketing copy: [`docs/WEBSITE.md`](docs/WEBSITE.md)
-- File sync instructions: [`website-sync/APPLY.md`](website-sync/APPLY.md)
+- Product page: https://datalund.no/visuals/resource-load/
+- Agent brief: [`docs/WEBSITE.md`](docs/WEBSITE.md)
+- Suite contract (canonical): [ECOSYSTEM.md on Website](https://raw.githubusercontent.com/Datalundno/Website/main/ECOSYSTEM.md)
 
 ## Develop
 
 ```bash
 npm install
 npm run lint
-npm run package:branded      # downloads/resourceLoad.pbiviz + website-sync
-npm run package:whitelabel  # downloads/wl/ + website-sync/public/downloads/wl/
+npm run package:branded      # downloads/resourceLoad.pbiviz
+npm run package:whitelabel  # downloads/wl/ (local only; gitignored)
+npx pbiviz package --certification-audit
 ```
-
 
 Requires Node.js ≥ 20.19 and `powerbi-visuals-tools` 7.2.x.
 
@@ -82,8 +81,9 @@ Requires Node.js ≥ 20.19 and `powerbi-visuals-tools` 7.2.x.
 | Doc | Purpose |
 | --- | --- |
 | [`RESOURCE_LOAD.md`](RESOURCE_LOAD.md) | Full agent kickoff / behaviour |
+| [`docs/CERTIFICATION.md`](docs/CERTIFICATION.md) | AppSource / Section D checklist |
 | [`docs/WEBSITE.md`](docs/WEBSITE.md) | Website / promo copy for Website repo agent |
-| [`docs/WHITELABEL.md`](docs/WHITELABEL.md) | Unbranded personal package |
+| [`docs/WHITELABEL.md`](docs/WHITELABEL.md) | Unbranded on-demand package |
 | [`docs/PRIVACY.md`](docs/PRIVACY.md) | Privacy (sandbox-only) |
 | [`docs/SUPPORT.md`](docs/SUPPORT.md) | Support |
 | [`docs/APPSOURCE.md`](docs/APPSOURCE.md) | AppSource checklist |

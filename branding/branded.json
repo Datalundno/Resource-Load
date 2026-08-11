@@ -1,8 +1,7 @@
 {
   "id": "branded",
   "outputFile": "downloads/resourceLoad.pbiviz",
-  "syncWebsite": true,
-  "websiteSyncPath": "downloads/resourceLoad.pbiviz",
+  "syncWebsite": false,
   "packageJson": {
     "name": "datalund-resource-load",
     "description": "DataLund Resource Load — custom visual for Microsoft Power BI",
@@ -17,11 +16,12 @@
       "version": "1.0.0.0",
       "description": "DataLund Resource Load — see who is busy when on a Power BI timeline with swimlanes for overlapping assignments, load badges, density presets, optional time window, cross-filtering, and tooltips. Free visual by DataLund (datalund.no).",
       "supportUrl": "https://datalund.no/support/",
-      "gitHubUrl": "https://github.com/Datalundno/Resource-Load"
+      "gitHubUrl": "https://github.com/Datalundno/Resource-Load",
+      "privacyPolicyUrl": "https://datalund.no/privacy/"
     },
     "author": {
       "name": "DataLund",
-      "email": "jonas.lundervold@gmail.com"
+      "email": "support@datalund.no"
     }
   },
   "strings": {

@@ -1,8 +1,7 @@
 {
   "id": "whitelabel",
   "outputFile": "downloads/wl/ResourceLoad.pbiviz",
-  "syncWebsite": true,
-  "websiteSyncPath": "downloads/wl/ResourceLoad.pbiviz",
+  "syncWebsite": false,
   "packageJson": {
     "name": "resource-load",
     "description": "Resource Load — custom visual for Microsoft Power BI",
